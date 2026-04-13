@@ -1,0 +1,11 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6b89b492_002D7817_002D4982_002Dbb29_002D66c7fb3cc247/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Add_AddsRecord" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::321047E7-79C0-49BB-8F01-87280063274A::net9.0::RESTMusic.Test.UnitTest1.Add_AddsRecord&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7ded2dee_002Df006_002D461f_002D9357_002D592e062277da/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAll_ReturnsData" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::321047E7-79C0-49BB-8F01-87280063274A::net9.0::RESTMusic.Test.UnitTest1.GetAll_ReturnsData&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

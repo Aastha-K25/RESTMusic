@@ -11,6 +11,7 @@ public class UnitTest1
 
         var result = repo.GetAll(); // Act
         
+        // Assert
         Assert.NotNull(result);
         Assert.True(result.Count() > 0);
     }
