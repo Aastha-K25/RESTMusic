@@ -13,6 +13,21 @@ public class MusicRecordsRepository
             return musicRecords;
         }
 
+        public IEnumerable<MusicRecord> Search(string? title, string? artist)
+        {
+            IEnumerable<MusicRecord> result = _musicRecords;
+            if (!string.IsNullOrEmpty(title))
+            {
+                result = result.Where(m => m.Title.ToLower().Contains(title.ToLower()));
+            }
+
+            if (!string.IsNullOrEmpty(artist))
+            {
+                result = result.Where(m => m.Artist.ToLower().Contains(artist.ToLower()));
+            }
+            return result;
+        }
+
         public MusicRecord? GetById(int id)
         {
             MusicRecord musicRecord = _musicRecords.FirstOrDefault(m => m.Id == id);
