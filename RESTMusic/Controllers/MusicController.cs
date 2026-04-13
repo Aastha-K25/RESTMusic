@@ -26,4 +26,19 @@ public class MusicController : ControllerBase
 
         return Ok(records); // 200
     }
+    
+    [HttpGet]
+    public ActionResult<IEnumerable<MusicRecord>> GetAll(
+        string? title,
+        string? artist)
+    {
+        var records = _repo.Search(title, artist);
+
+        if (!records.Any())
+        {
+            return NoContent();
+        }
+
+        return Ok(records);
+    }
 }
