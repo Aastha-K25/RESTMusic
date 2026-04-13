@@ -14,9 +14,7 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786077cb-1abb-4eca-9398-2e1b16ef6ede" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RESTMusic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RESTMusic/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="786077cb-1abb-4eca-9398-2e1b16ef6ede" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +43,7 @@
     <commands />
     <urls />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -114,12 +113,14 @@
       <updated>1776066573658</updated>
       <workItem from="1776066575912" duration="1420000" />
       <workItem from="1776068109110" duration="5737000" />
+      <workItem from="1776076205611" duration="1471000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

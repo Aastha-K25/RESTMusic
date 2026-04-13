@@ -6,8 +6,7 @@ public class MusicRecordsRepository
     private static int nextid = 1;
 
         public MusicRecordsRepository() { }
-
-        // læs om readonly collections i C# og overvej at bruge det i stedet for at returnere en kopi af listen, tænk på pladsen listen bruger i hukommelsen, og om det er nødvendigt at returnere en kopi af listen, eller om det er nok at returnere en readonly collection, som ikke kan ændres uden for klassen.
+    
         public IEnumerable<MusicRecord> GetAll()
         {
             List<MusicRecord> musicRecords = new List<MusicRecord>(_musicRecords);
@@ -73,22 +72,22 @@ public class MusicRecordsRepository
         }
         public MusicRecord? Update(int id, MusicRecord updatedMusicRecord)
         {
-            MusicRecord? existingMusicRecord = _musicRecords.FirstOrDefault(m => m.Id == id);
-            if (existingMusicRecord == null)
+            MusicRecord? existing = _musicRecords.FirstOrDefault(m => m.Id == id);
+            if (existing == null)
             {
                 return null;
             }
-            existingMusicRecord.Title = updatedMusicRecord.Title;
-            existingMusicRecord.Artist = updatedMusicRecord.Artist;
-            existingMusicRecord.Duration = updatedMusicRecord.Duration;
-            existingMusicRecord.PublicationYear = updatedMusicRecord.PublicationYear;
+            existing.Title = updatedMusicRecord.Title;
+            existing.Artist = updatedMusicRecord.Artist;
+            existing.Duration = updatedMusicRecord.Duration;
+            existing.PublicationYear = updatedMusicRecord.PublicationYear;
             MusicRecord musicRecordCopy = new MusicRecord
             {
-                Id = existingMusicRecord.Id,
-                Title = existingMusicRecord.Title,
-                Artist = existingMusicRecord.Artist,
-                Duration = existingMusicRecord.Duration,
-                PublicationYear = existingMusicRecord.PublicationYear
+                Id = existing.Id,
+                Title = existing.Title,
+                Artist = existing.Artist,
+                Duration = existing.Duration,
+                PublicationYear = existing.PublicationYear
             };
             return musicRecordCopy;
         }
