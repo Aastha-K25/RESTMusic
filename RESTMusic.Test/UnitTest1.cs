@@ -7,7 +7,15 @@ public class UnitTest1
     [Fact]
     public void GetAll_ReturnsData()
     {
-        MusicRecordsRepository repo = new MusicRecordsRepository(true); // arrange
+        MusicRecordsRepository repo = new MusicRecordsRepository(); // arrange
+        
+        repo.Add(new MusicRecord
+        {
+            Title = "Song1",
+            Artist = "Artist1",
+            Duration = 200,
+            PublicationYear = 2020
+        });
 
         var result = repo.GetAll(); // Act
         
@@ -37,20 +45,37 @@ public class UnitTest1
     [Fact]
     public void GetById_ReturnsCorrectRecord()
     {
-        MusicRecordsRepository repo = new MusicRecordsRepository(true);
+        MusicRecordsRepository repo = new MusicRecordsRepository();
 
-        var result = repo.GetById(1);
+        var added = repo.Add(new MusicRecord
+        {
+            Title = "Song1",
+            Artist = "Artist1",
+            Duration = 200,
+            PublicationYear = 2021
+        });
+        var result = repo.GetById(added.Id); // act
 
+        // assert
         Assert.NotNull(result);
-        Assert.Equal(1, result.Id);
+        Assert.Equal(added.Id, result.Id);
+
     }
 
     [Fact]
     public void remove_DeletesRecord()
     {
-        MusicRecordsRepository repo = new MusicRecordsRepository(true);
+        MusicRecordsRepository repo = new MusicRecordsRepository();
 
-        var result = repo.Remove(1);
+        var added = repo.Add(new MusicRecord
+        {
+            Title = "Song1",
+            Artist = "Artist1",
+            Duration = 200,
+            PublicationYear = 2020
+        });
+
+        var result = repo.Remove(added.Id);
 
         Assert.NotNull(result);
     }
@@ -58,19 +83,28 @@ public class UnitTest1
     [Fact]
     public void Update_ChangesData()
     {
-        MusicRecordsRepository repo = new MusicRecordsRepository(true);
+        MusicRecordsRepository repo = new MusicRecordsRepository();  // arrange
 
+        var added = repo.Add(new MusicRecord
+        {
+            Title = "Old",
+            Artist = "Old",
+            Duration = 100,
+            PublicationYear = 2020
+        });
+        
         MusicRecord updated = new MusicRecord()
         {
-            Title = "Updted",
-            Artist = "Updted",
-            Duration = 200,
-            PublicationYear = 2021
+            Title = "New",
+            Artist = "New",
+            Duration = 300,
+            PublicationYear = 2025
         };
 
-        var result = repo.Update(1, updated);
+        var result = repo.Update(added.Id, updated); // act
 
+        // assert
         Assert.NotNull(result);
-        Assert.Equal("Updted", result.Title);
+        Assert.Equal("New", result.Title);
     }
 }
