@@ -14,7 +14,7 @@ public class MusicController : ControllerBase
         _repo = new MusicRecordsRepository();
     }
 
-    [HttpGet]
+    [HttpGet("GetAll")]
     public ActionResult<IEnumerable<MusicRecord>> GetAll()
     {
         var records = _repo.GetAll();
@@ -27,18 +27,29 @@ public class MusicController : ControllerBase
         return Ok(records); // 200
     }
     
-    [HttpGet]
-    public ActionResult<IEnumerable<MusicRecord>> GetAll(
-        string? title,
-        string? artist)
+    [HttpGet("search")]
+    public ActionResult<IEnumerable<MusicRecord>> Search(string? title, string? artist)
     {
-        var records = _repo.Search(title, artist);
+      var records = _repo.Search(title, artist);
+  
+      if (!records.Any())
+      {
+          return NoContent();
+      }
+  
+      return Ok(records);
+     }
 
-        if (!records.Any())
+    [HttpPost("Add")]
+    public ActionResult<MusicRecord> Add(MusicRecord newRecord)
+    {
+        if (newRecord == null || string.IsNullOrEmpty(newRecord.Title))
         {
-            return NoContent();
+            return BadRequest("Title mangler");
         }
 
-        return Ok(records);
+        var created = _repo.Add(newRecord);
+
+        return Created($"api/music/{created.Id}", created);
     }
 }
