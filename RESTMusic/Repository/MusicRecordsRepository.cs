@@ -82,7 +82,7 @@ public class MusicRecordsRepository
                 Duration = musicRecord.Duration,
                 PublicationYear = musicRecord.PublicationYear
             };
-            return musicRecordCopy;
+            return musicRecord;
 
         }
         public MusicRecord? Update(int id, MusicRecord updatedMusicRecord)

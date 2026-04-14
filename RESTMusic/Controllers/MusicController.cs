@@ -52,4 +52,33 @@ public class MusicController : ControllerBase
 
         return Created($"api/music/{created.Id}", created);
     }
+
+    [HttpDelete("Delete")]
+    public ActionResult<MusicRecord> Delete(int id)
+    {
+        MusicRecord? record = _repo.Remove(id);
+        if (record == null)
+        {
+            return NotFound();
+        }
+        return Ok(record);
+    }
+
+    [HttpPut("Update")]
+    public ActionResult<MusicRecord> Update(int id, MusicRecord updatedRecord)
+    {
+        if (updatedRecord == null)
+        {
+            return BadRequest();
+        }
+
+        MusicRecord? record = _repo.Update(id, updatedRecord);
+
+        if (record == null)
+        {
+            return NotFound();
+        }
+        return Ok(record);
+    }
+
 }
