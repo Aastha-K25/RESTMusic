@@ -1,0 +1,16 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=601c2585_002D098f_002D464c_002Dba58_002D9c54bbf30e67/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetById_ReturnsCorrectRecord" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::AB252FF0-9724-418F-A20E-1797A0DE4CB9::net9.0::RESTMusic.Test.UnitTest1&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6dc004fa_002D545f_002D4260_002D9be9_002D8be3a95134be/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAll_ReturnsData #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::AB252FF0-9724-418F-A20E-1797A0DE4CB9::net9.0::RESTMusic.Test.UnitTest1.GetAll_ReturnsData&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f5130d5b_002D8461_002D4a15_002Da1d7_002D92cc2262366c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetAll_ReturnsData" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::AB252FF0-9724-418F-A20E-1797A0DE4CB9::net9.0::RESTMusic.Test.UnitTest1.GetAll_ReturnsData&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
