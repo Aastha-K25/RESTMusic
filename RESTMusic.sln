@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTMusic", "RESTMusic\RESTMusic.csproj", "{B95DB115-EC7A-4176-A1F1-7211638E8680}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit test", "Unit test\Unit test.csproj", "{AB252FF0-9724-418F-A20E-1797A0DE4CB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{B95DB115-EC7A-4176-A1F1-7211638E8680}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B95DB115-EC7A-4176-A1F1-7211638E8680}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B95DB115-EC7A-4176-A1F1-7211638E8680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB252FF0-9724-418F-A20E-1797A0DE4CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB252FF0-9724-418F-A20E-1797A0DE4CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB252FF0-9724-418F-A20E-1797A0DE4CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB252FF0-9724-418F-A20E-1797A0DE4CB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
