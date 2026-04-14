@@ -14,13 +14,14 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786077cb-1abb-4eca-9398-2e1b16ef6ede" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RESTMusic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RESTMusic/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="786077cb-1abb-4eca-9398-2e1b16ef6ede" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -64,6 +65,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.RESTMusic: http.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -122,6 +124,7 @@
       <workItem from="1776068109110" duration="5737000" />
       <workItem from="1776076205611" duration="1471000" />
       <workItem from="1776077724213" duration="996000" />
+      <workItem from="1776088781850" duration="10714000" />
     </task>
     <servers />
   </component>
