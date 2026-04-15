@@ -1,3 +1,7 @@
+using RESTMusic.Data;
+using Microsoft.EntityFrameworkCore;
+using RESTMusic;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -12,7 +16,8 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod()
             .AllowAnyHeader());
 });
-
+builder.Services.AddDbContext<MusicContext>(options => options.UseSqlite("Data Source=music.db"));
+builder.Services.AddScoped<MusicRecordsRepository>();
 var app = builder.Build();
 
 

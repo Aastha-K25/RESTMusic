@@ -9,9 +9,9 @@ public class MusicController : ControllerBase
 {
     private readonly MusicRecordsRepository _repo;
 
-    public MusicController()
+    public MusicController(MusicRecordsRepository repo)
     {
-        _repo = new MusicRecordsRepository();
+        _repo = repo;
     }
 
     [HttpGet("GetAll")]
@@ -26,19 +26,19 @@ public class MusicController : ControllerBase
 
         return Ok(records); // 200
     }
-    
+
     [HttpGet("search")]
     public ActionResult<IEnumerable<MusicRecord>> Search(string? title, string? artist)
     {
-      var records = _repo.Search(title, artist);
-  
-      if (!records.Any())
-      {
-          return NoContent();
-      }
-  
-      return Ok(records);
-     }
+        var records = _repo.Search(title, artist);
+
+        if (!records.Any())
+        {
+            return NoContent();
+        }
+
+        return Ok(records);
+    }
 
     [HttpPost("Add")]
     public ActionResult<MusicRecord> Add(MusicRecord newRecord)
@@ -52,4 +52,35 @@ public class MusicController : ControllerBase
 
         return Created($"api/music/{created.Id}", created);
     }
+
+    [HttpPut("Update")]
+    public ActionResult<MusicRecord> Update(int id, MusicRecord updated)
+    {  
+        if (updated == null)
+        {
+            return BadRequest();
+        }
+
+        var record = _repo.Update(id, updated);
+        if (record == null)
+        {
+            return NotFound();
+        }
+        
+        return Ok(record);
+    }
+
+    [HttpDelete("Delete")]
+    public ActionResult<MusicRecord> Delete(int id)
+    {
+        var record = _repo.Remove(id);
+
+        if (record == null)
+        {
+            return NotFound();
+        }
+        return Ok(record);
+    }
+    
+    
 }

@@ -1,109 +1,86 @@
+using RESTMusic.Data;
+
 namespace RESTMusic;
 
 public class MusicRecordsRepository
 {
-    private List<MusicRecord> _musicRecords = new List<MusicRecord>();
-    private static int nextid = 1;
+    private readonly MusicContext _context;
 
-        public MusicRecordsRepository() { }
+    public MusicRecordsRepository(MusicContext context)
+    {
+        _context = context;
+    }
     
         public IEnumerable<MusicRecord> GetAll()
         {
-            List<MusicRecord> musicRecords = new List<MusicRecord>(_musicRecords);
-            return musicRecords;
+            return _context.MusicRecords.ToList();
         }
 
         public IEnumerable<MusicRecord> Search(string? title, string? artist)
         {
-            IEnumerable<MusicRecord> result = _musicRecords;
+            var query = _context.MusicRecords.AsQueryable();
+
             if (!string.IsNullOrEmpty(title))
             {
-                result = result.Where(m => m.Title.ToLower().Contains(title.ToLower()));
+                query = query.Where(m => m.Title.Contains(title));
             }
 
             if (!string.IsNullOrEmpty(artist))
             {
-                result = result.Where(m => m.Artist.ToLower().Contains(artist.ToLower()));
+                query = query.Where(m => m.Artist.Contains(artist));
             }
-            return result;
+
+            return query.ToList();
         }
 
         public MusicRecord? GetById(int id)
         {
-            MusicRecord musicRecord = _musicRecords.FirstOrDefault(m => m.Id == id);
+            MusicRecord musicRecord = _context.MusicRecords.Find(id);
             if (musicRecord == null)
             {
                 return null;
             }
-            MusicRecord musicRecordCopy = new MusicRecord
-            {
-                Id = musicRecord.Id,
-                Title = musicRecord.Title,
-                Artist = musicRecord.Artist,
-                Duration = musicRecord.Duration,
-                PublicationYear = musicRecord.PublicationYear
 
-            };
-            return musicRecordCopy;
-
+            return musicRecord;
         }
 
         public MusicRecord Add(MusicRecord musicRecord)
         {
-            musicRecord.Id = nextid++;
-            _musicRecords.Add(musicRecord);
-
-            MusicRecord musicRecordCopy = new MusicRecord
-            {
-                Id = musicRecord.Id,
-                Title = musicRecord.Title,
-                Artist = musicRecord.Artist,
-                Duration = musicRecord.Duration,
-                PublicationYear = musicRecord.PublicationYear
-            };
-            return musicRecordCopy;
-
+            _context.MusicRecords.Add(musicRecord);
+            _context.SaveChanges();
+            return musicRecord;
         }
 
         public MusicRecord? Remove(int id)
         {
-            MusicRecord? musicRecord = _musicRecords.FirstOrDefault(m => m.Id == id);
-            if (musicRecord == null)
-            {
+            MusicRecord? record = _context.MusicRecords.Find(id);
+            
+            if (record == null)
+            { 
                 return null;
             }
-            _musicRecords.Remove(musicRecord);
 
-            MusicRecord musicRecordCopy = new MusicRecord
-            {
-                Id = musicRecord.Id,
-                Title = musicRecord.Title,
-                Artist = musicRecord.Artist,
-                Duration = musicRecord.Duration,
-                PublicationYear = musicRecord.PublicationYear
-            };
-            return musicRecordCopy;
+            _context.MusicRecords.Remove(record);
+            _context.SaveChanges();
 
+            return record;
         }
-        public MusicRecord? Update(int id, MusicRecord updatedMusicRecord)
+        public MusicRecord? Update(int id, MusicRecord updated)
         {
-            MusicRecord? existing = _musicRecords.FirstOrDefault(m => m.Id == id);
+            MusicRecord? existing = _context.MusicRecords.Find(id);
             if (existing == null)
             {
                 return null;
             }
-            existing.Title = updatedMusicRecord.Title;
-            existing.Artist = updatedMusicRecord.Artist;
-            existing.Duration = updatedMusicRecord.Duration;
-            existing.PublicationYear = updatedMusicRecord.PublicationYear;
-            MusicRecord musicRecordCopy = new MusicRecord
-            {
-                Id = existing.Id,
-                Title = existing.Title,
-                Artist = existing.Artist,
-                Duration = existing.Duration,
-                PublicationYear = existing.PublicationYear
-            };
-            return musicRecordCopy;
+            
+            existing.Title = updated.Title;
+            existing.Artist = updated.Artist;
+            existing.Duration = updated.Duration;
+            existing.PublicationYear = updated.PublicationYear;
+
+            _context.SaveChanges();
+
+            return existing;
+           
         }
 }
