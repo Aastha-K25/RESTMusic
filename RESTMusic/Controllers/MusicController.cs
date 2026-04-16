@@ -32,6 +32,7 @@ public class MusicController : ControllerBase
 
     // GET BY ID
     [HttpGet("{id}")]
+    
     public ActionResult<MusicRecord> GetById(int id)
     {
         var record = _repo.GetById(id);
@@ -60,6 +61,7 @@ public class MusicController : ControllerBase
 
     // POST Add
     [HttpPost]
+    [Authorize]
     public ActionResult<MusicRecord> Add(MusicRecord newRecord)
     {
         if (newRecord == null || string.IsNullOrEmpty(newRecord.Title))
@@ -74,6 +76,7 @@ public class MusicController : ControllerBase
 
     // PUT Updatere
     [HttpPut("{id}")]
+    [Authorize]
     public ActionResult<MusicRecord> Update(int id, MusicRecord updated)
     {
         if (updated == null)
@@ -93,6 +96,7 @@ public class MusicController : ControllerBase
 
     // DELETE
     [HttpDelete("{id}")]
+    [Authorize]
     public ActionResult Delete(int id)
     {
         var record = _repo.Remove(id);
