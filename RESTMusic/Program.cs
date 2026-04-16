@@ -1,6 +1,10 @@
 using RESTMusic.Data;
 using Microsoft.EntityFrameworkCore;
 using RESTMusic;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,24 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var key = "ThisIsASecretKey";
+
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
+        };
+    });
+builder.Services.AddAuthentication();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -30,4 +52,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseAuthentication();
+
+app.UseAuthorization();
+
 app.Run();
+
+

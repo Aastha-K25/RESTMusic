@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using RESTMusic;
 
 namespace RESTMusic.Controllers;
@@ -51,6 +52,7 @@ public class MusicController : ControllerBase
         return Ok(records);
     }
 
+    [Authorize]
     [HttpPost("Add")]
     public ActionResult<MusicRecord> Add(MusicRecord newRecord)
     {
@@ -64,6 +66,7 @@ public class MusicController : ControllerBase
         return Created($"api/music/{created.Id}", created);
     }
 
+    [Authorize]
     [HttpPut("Update")]
     public ActionResult<MusicRecord> Update(int id, MusicRecord updated)
     {  
@@ -80,7 +83,8 @@ public class MusicController : ControllerBase
         
         return Ok(record);
     }
-
+    
+    [Authorize]
     [HttpDelete("Delete")]
     public ActionResult<MusicRecord> Delete(int id)
     {
