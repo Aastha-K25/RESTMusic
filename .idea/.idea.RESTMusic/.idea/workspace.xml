@@ -15,11 +15,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786077cb-1abb-4eca-9398-2e1b16ef6ede" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RESTMusic/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RESTMusic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RESTMusic/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RESTMusic/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RESTMusic/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RESTMusic/Controllers/MusicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RESTMusic/Controllers/MusicController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RESTMusic/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RESTMusic/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RESTMusic/RESTMusic.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RESTMusic/RESTMusic.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RESTMusic/music.db" beforeDir="false" afterPath="$PROJECT_DIR$/RESTMusic/music.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +145,7 @@
       <workItem from="1776191792472" duration="8466000" />
       <workItem from="1776340371315" duration="44000" />
       <workItem from="1776340486904" duration="1587000" />
+      <workItem from="1776342397012" duration="2993000" />
     </task>
     <servers />
   </component>

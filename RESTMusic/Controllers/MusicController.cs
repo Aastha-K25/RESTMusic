@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using RESTMusic;
+using Microsoft.AspNetCore.Mvc;
 
 namespace RESTMusic.Controllers;
 
@@ -15,30 +16,35 @@ public class MusicController : ControllerBase
         _repo = repo;
     }
 
-    [HttpGet("GetAll")]
+    // GET ALL
+    [HttpGet]
     public ActionResult<IEnumerable<MusicRecord>> GetAll()
     {
         var records = _repo.GetAll();
 
         if (records == null || !records.Any())
         {
-            return NoContent(); // 204
+            return NoContent();
         }
 
-        return Ok(records); // 200
+        return Ok(records);
     }
 
-    [HttpGet("GetById")]
+    // GET BY ID
+    [HttpGet("{id}")]
     public ActionResult<MusicRecord> GetById(int id)
     {
         var record = _repo.GetById(id);
+
         if (record == null)
         {
             return NotFound();
         }
+
         return Ok(record);
     }
 
+    // SEARCH
     [HttpGet("search")]
     public ActionResult<IEnumerable<MusicRecord>> Search(string? title, string? artist)
     {
@@ -52,8 +58,8 @@ public class MusicController : ControllerBase
         return Ok(records);
     }
 
-    [Authorize]
-    [HttpPost("Add")]
+    // POST Add
+    [HttpPost]
     public ActionResult<MusicRecord> Add(MusicRecord newRecord)
     {
         if (newRecord == null || string.IsNullOrEmpty(newRecord.Title))
@@ -66,27 +72,28 @@ public class MusicController : ControllerBase
         return Created($"api/music/{created.Id}", created);
     }
 
-    [Authorize]
-    [HttpPut("Update")]
+    // PUT Updatere
+    [HttpPut("{id}")]
     public ActionResult<MusicRecord> Update(int id, MusicRecord updated)
-    {  
+    {
         if (updated == null)
         {
             return BadRequest();
         }
 
         var record = _repo.Update(id, updated);
+
         if (record == null)
         {
             return NotFound();
         }
-        
+
         return Ok(record);
     }
-    
-    [Authorize]
-    [HttpDelete("Delete")]
-    public ActionResult<MusicRecord> Delete(int id)
+
+    // DELETE
+    [HttpDelete("{id}")]
+    public ActionResult Delete(int id)
     {
         var record = _repo.Remove(id);
 
@@ -94,8 +101,7 @@ public class MusicController : ControllerBase
         {
             return NotFound();
         }
-        return Ok(record);
+
+        return Ok();
     }
-    
-    
 }

@@ -5,15 +5,12 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-
 var builder = WebApplication.CreateBuilder(args);
-
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var key = "ThisIsASecretKey";
+var key = "ThisIsASecretKeyThatIsLongEnough1234567890";
 
 builder.Services.AddAuthentication(options =>
     {
@@ -30,7 +27,7 @@ builder.Services.AddAuthentication(options =>
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
         };
     });
-builder.Services.AddAuthentication();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -48,13 +45,9 @@ app.UseSwaggerUI();
 
 app.UseCors("AllowAll");
 
-app.UseAuthorization();
-
-app.MapControllers();
-
 app.UseAuthentication();
-
 app.UseAuthorization();
+app.MapControllers();
 
 app.Run();
 

@@ -13,7 +13,7 @@ public class AuthController : ControllerBase
     [HttpPost("Login")]
     public IActionResult Login()
     {
-        var key = "ThisIsASecretKey";
+        var key = "ThisIsASecretKeyThatIsLongEnough1234567890";
 
         var claims = new[]
         {
