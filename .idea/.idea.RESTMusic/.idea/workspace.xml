@@ -37,12 +37,12 @@
     &quot;assignee&quot;: &quot;Eylem003&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Aastha-K25/RESTMusic.git",
-    "accountId": "4807d278-d1a0-4520-b9a9-e5ae185e2fcf"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Aastha-K25/RESTMusic.git&quot;,
+    &quot;accountId&quot;: &quot;4807d278-d1a0-4520-b9a9-e5ae185e2fcf&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/RESTMusic/Controllers/MusicController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/RESTMusic/Data/MusicContext.cs" root0="FORCE_HIGHLIGHTING" />
