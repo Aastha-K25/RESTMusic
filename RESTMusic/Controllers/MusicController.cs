@@ -27,6 +27,17 @@ public class MusicController : ControllerBase
         return Ok(records); // 200
     }
 
+    [HttpGet("GetById")]
+    public ActionResult<MusicRecord> GetById(int id)
+    {
+        var record = _repo.GetById(id);
+        if (record == null)
+        {
+            return NotFound();
+        }
+        return Ok(record);
+    }
+
     [HttpGet("search")]
     public ActionResult<IEnumerable<MusicRecord>> Search(string? title, string? artist)
     {
