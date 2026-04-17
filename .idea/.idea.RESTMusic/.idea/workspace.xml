@@ -15,7 +15,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786077cb-1abb-4eca-9398-2e1b16ef6ede" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RESTMusic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RESTMusic/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RESTMusic/Controllers/MusicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RESTMusic/Controllers/MusicController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RESTMusic/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RESTMusic/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +93,22 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.RESTMusic: http">
+  <component name="RunManager" selected="Azure - Web App.Azure - Web App: RESTMusic ">
+    <configuration name="Azure - Web App: RESTMusic " type="AzureWebAppDeploy">
+      <option name="appServicePlanName" value="ASP-begynderhtml-8de6" />
+      <option name="appServicePlanResourceGroupName" value="begynderhtml" />
+      <option name="operatingSystem" value="Windows" />
+      <option name="pricingSize" value="F1" />
+      <option name="pricingTier" value="Free" />
+      <option name="projectConfiguration" value="Release" />
+      <option name="projectPlatform" value="Any CPU" />
+      <option name="publishableProjectPath" value="$PROJECT_DIR$/RESTMusic/RESTMusic.csproj" />
+      <option name="region" value="swedencentral" />
+      <option name="resourceGroupName" value="music-rg" />
+      <option name="subscriptionId" value="b4e3c02c-7f53-4476-b658-98b6d97a5d2a" />
+      <option name="webAppName" value="restmusicaasthaogeylem" />
+      <method v="2" />
+    </configuration>
     <configuration name="RESTMusic: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/RESTMusic/RESTMusic.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net9.0" />
@@ -141,7 +158,8 @@
       <workItem from="1776191792472" duration="8466000" />
       <workItem from="1776340371315" duration="44000" />
       <workItem from="1776340486904" duration="1587000" />
-      <workItem from="1776342397012" duration="3117000" />
+      <workItem from="1776342397012" duration="4031000" />
+      <workItem from="1776412169614" duration="3509000" />
     </task>
     <servers />
   </component>

@@ -35,8 +35,11 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod()
             .AllowAnyHeader());
 });
-builder.Services.AddDbContext<MusicContext>(options => options.UseSqlite("Data Source=music.db"));
+builder.Services.AddDbContext<MusicContext>(options =>
+    options.UseSqlite("Data Source=music.db"));
+
 builder.Services.AddScoped<MusicRecordsRepository>();
+
 var app = builder.Build();
 
 
@@ -48,6 +51,12 @@ app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+   var db = scope.ServiceProvider.GetRequiredService<MusicContext>();
+    db.Database.EnsureCreated();
+}
 
 app.Run();
 

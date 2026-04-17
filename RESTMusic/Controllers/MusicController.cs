@@ -24,7 +24,7 @@ public class MusicController : ControllerBase
 
         if (records == null || !records.Any())
         {
-            return NoContent();
+            return Ok(new List<MusicRecord>());
         }
 
         return Ok(records);
@@ -61,7 +61,6 @@ public class MusicController : ControllerBase
 
     // POST Add
     [HttpPost]
-    [Authorize]
     public ActionResult<MusicRecord> Add(MusicRecord newRecord)
     {
         if (newRecord == null || string.IsNullOrEmpty(newRecord.Title))
